@@ -50,19 +50,22 @@ kubectl config unset users.foo                       # delete user foo
 
 ### Apply
 
-apply manages applications through files defining Kubernetes resources. It creates and updates resources in a cluster through running kubectl apply. This is the recommended way of managing Kubernetes applications on production. See Kubectl Book.
-Creating Objects
+apply manages applications through files defining Kubernetes resources. It creates and updates resources in a cluster through running kubectl apply. This is the recommended way of managing Kubernetes applications on production. See [Kubectl Book](https://kubectl.docs.kubernetes.io/).
+
+### Creating Objects
 
 Kubernetes manifests can be defined in YAML or JSON. The file extension .yaml, .yml, and .json can be used.
-
+```bash
 kubectl apply -f ./my-manifest.yaml            # create resource(s)
 kubectl apply -f ./my1.yaml -f ./my2.yaml      # create from multiple files
 kubectl apply -f ./dir                         # create resource(s) in all manifest files in dir
 kubectl apply -f https://git.io/vPieo          # create resource(s) from url
 kubectl create deployment nginx --image=nginx  # start a single instance of nginx
 kubectl explain pods                           # get the documentation for pod manifests
+```
 
-# Create multiple YAML objects from stdin
+- Create multiple YAML objects from stdin
+```yaml
 cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: Pod
@@ -100,9 +103,10 @@ data:
   password: $(echo -n "s33msi4" | base64 -w0)
   username: $(echo -n "jane" | base64 -w0)
 EOF
+```
 
-Viewing, Finding Resources
-
+### Viewing, Finding Resources
+```bash
 # Get commands with basic output
 kubectl get services                          # List all services in the namespace
 kubectl get pods --all-namespaces             # List all pods in all namespaces
@@ -162,6 +166,7 @@ kubectl get events --sort-by=.metadata.creationTimestamp
 
 # Compares the current state of the cluster against the state that the cluster would be in if the manifest was applied.
 kubectl diff -f ./my-manifest.yaml
+```
 
 Updating Resources
 
