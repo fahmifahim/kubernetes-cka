@@ -2,7 +2,6 @@
 - source: [cheatsheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 
 This page is an overview of the kubectl command.
-- Kubectl Autocomplete
 - Kubectl Context and Configuration
 - Apply
 - Creating Objects
@@ -16,10 +15,10 @@ This page is an overview of the kubectl command.
 - Interacting with Nodes and Cluster
 - What's next
 
-Kubectl Context and Configuration
+### Kubectl Context and Configuration
 
 Set which Kubernetes cluster kubectl communicates with and modifies configuration information. See Authenticating Across Clusters with kubeconfig documentation for detailed config file information.
-
+```bash
 kubectl config view # Show Merged kubeconfig settings.
 
 # use multiple kubeconfig files at the same time and view merged config
@@ -47,8 +46,9 @@ kubectl config set-context gce --user=cluster-admin --namespace=foo \
   && kubectl config use-context gce
  
 kubectl config unset users.foo                       # delete user foo
+```
 
-Apply
+### Apply
 
 apply manages applications through files defining Kubernetes resources. It creates and updates resources in a cluster through running kubectl apply. This is the recommended way of managing Kubernetes applications on production. See Kubectl Book.
 Creating Objects
