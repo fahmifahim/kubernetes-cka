@@ -2,6 +2,7 @@
 - source: [cheatsheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 
 This page is an overview of the kubectl command.
+- minikube
 - Kubectl Context and Configuration
 - Apply
 - Creating Objects
@@ -14,6 +15,23 @@ This page is an overview of the kubectl command.
 - Interacting with running Pods
 - Interacting with Nodes and Cluster
 - What's next
+
+
+### minikube
+```bash
+$ minikube ssh
+                         _             _
+            _         _ ( )           ( )
+  ___ ___  (_)  ___  (_)| |/')  _   _ | |_      __
+/' _ ` _ `\| |/' _ `\| || , <  ( ) ( )| '_`\  /'__`\
+| ( ) ( ) || || ( ) || || |\`\ | (_) || |_) )(  ___/
+(_) (_) (_)(_)(_) (_)(_)(_) (_)`\___/'(_,__/'`\____)
+
+# List all docker process on minikube
+$ docker ps
+
+```
+
 
 ### Kubectl Context and Configuration
 
@@ -114,6 +132,8 @@ kubectl get pods -o wide                      # List all pods in the current nam
 kubectl get deployment my-dep                 # List a particular deployment
 kubectl get pods                              # List all pods in the namespace
 kubectl get pod my-pod -o yaml                # Get a pod's YAML
+kubectl get all --all-namespaces
+
 
 # Describe commands with verbose output
 kubectl describe nodes my-node
