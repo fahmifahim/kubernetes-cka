@@ -27,9 +27,9 @@ EOF
 
 cat >> /etc/hosts << EOF
 {
-    192.168.11.14	master.example.com control master
-    192.168.11.15	worker1.example.com worker1
-    192.168.11.16	worker2.example.com worker2
+    192.168.11.14	master.example.com control master   # --> Change the IP as your Lab environment
+    192.168.11.15	worker1.example.com worker1         # --> Change the IP as your Lab environment
+    192.168.11.16	worker2.example.com worker2         # --> Change the IP as your Lab environment
 }
 EOF
 
