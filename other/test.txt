@@ -1,3 +1,19 @@
+VirtualBox Commands: 
+VBoxManage list vms
+    "vb-master" {cac89685-22b3-448f-8782-2ec656af6a8c}
+    "vb-worker1" {b0c4bae8-9469-4e6d-b1ce-a1f355c66df1}
+
+#VBoxManage startvm "VM name" --type headless
+VBoxManage startvm "vb-master" --type headless
+VBoxManage startvm "vb-worker1" --type headless
+
+#VBoxHeadless --startvm <uuid|name>
+VBoxHeadless --startvm "vb-master"
+VBoxHeadless --startvm "vb-worker1"
+
+#Check running vms
+VBoxManage list runningvms
+
 
 Questions are not from any actual exam!!!  
 
