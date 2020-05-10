@@ -5,10 +5,6 @@
 #Check runningvms
 #TBD
 
-#Start virtualmachine
+#Start virtualmachine in headlessmode 
 VBoxManage list vms | awk '{print "VBoxHeadless --startvm " $1 " & "}' | sh
-echo "VBoxHeadless returncode: $?"
 
-#List running virtual machine
-echo "Running virtual machine:\n"
-VBoxManage list runningvms
