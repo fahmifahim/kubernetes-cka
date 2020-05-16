@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata: 
   name: busybox2
-  namespaces: devel
+  namespace: devel
   labels: 
     app: busybox 
 spec:
