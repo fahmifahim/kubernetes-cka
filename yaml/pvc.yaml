@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: pv-claimA
+  name: pv-claim-a
 spec:
   accessModes:
     - ReadWriteMany
