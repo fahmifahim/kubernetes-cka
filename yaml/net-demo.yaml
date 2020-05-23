@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: net-demo
+spec:
+  containers:
+  - name: busy1
+    image: busybox
+    command: 
+      - sleep 
+      - "3600"
+  - name: busy2
+    image: busybox
+    command: 
+      - sleep 
+      - "3600"
