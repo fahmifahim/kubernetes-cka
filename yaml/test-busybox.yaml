@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: test-busybox
+  name: test-busybox
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-busybox
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: test-busybox
+    spec:
+      containers:
+      - image: busybox
+        name: busybox
+        command:
+        - sleep
+        - "3600"
